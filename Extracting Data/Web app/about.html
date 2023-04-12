@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<br>
+
+<h2>A. C. Patil College of Engineering</h2>
+<h3>Department of Artificial Intelligence & Data Science</h3>
+<br>
+<h3>Welcome to Project "Intelligently Extract Text & Data from Document with OCR NER" !!!</h3>
+<br>
+<h3>Project Guid : Prof.Megha Jain</h3>
+
+    <h3>Preapared by:</h3>
+        <li>Shubham Bharat Gadhave - 21</li>
+        <li>Yuvraj Baleya Gujari - 26 </li>
+        <li>Anushka Vinayak Kamble - 31 </li>
+        <li>Shruti Mahesh Trivedi - 68</li>
+    </p>
+
+    <p>In this project we develop customized Named Entity Recognizer. 
+        The main idea of this course is to extract entities from the scanned documents like invoice, 
+        Business Card, Shipping Bill, Bill of Lading documents etc.
+        To develop this project we will use two main technologies in machine learning are,</p>
+        <ol>
+            <li>Computer Vision</li>
+            <li>Natural Language Processing</li>
+        </ol>
+        
+    <p>
+        In Computer Vision module, we scan the document, identify the location of text and finally extract text from the image. 
+        Then in Natural language processing, 
+        we extract the entitles from the text and do necessary text cleaning and parse the entities form the text.
+    </p> 
+        
+    <p><strong>Python Libraries used in Computer Vision Module.</strong></p> 
+    <ul>
+        <li>OpenCV</li>
+        <li>Numpy</li>
+        <li>Pytesseract</li>
+    </ul>
+    <p><strong>Python Libraries used in Natural Language Processing</strong></p>
+    <ul>
+        <li>SpaCy</li>
+        <li>Pandas</li>
+        <li>Regular Expression</li>
+        <li>String</li>
+    </ul>
+            
+    <p>
+        <strong>Stage -1: We setup the project by doing the necessary installations and requirements.</strong>
+        <ul>
+            <li>Install Python</li>
+            <li>Install Dependencies</li>
+        </ul>
+
+    </p>
+    <p>
+        <strong>Stage -2: We have done data preparation. That extract text from images using Pytesseract and also do necessary cleaning.</strong>
+        <ul>
+            <li>Gather Images</li>
+            <li>Overview on Pytesseract</li>
+            <li>Extract Text from all Image</li>
+            <li>Clean and Prepare text</li>
+        </ul>
+    </p>
+    <p>
+       <strong>Stage -3: We label NER data using BIO tagging.</strong> 
+        <ul>
+            <li>Manually Labeling with BIO technique
+                <ul>
+                    <li>B - Beginning</li>
+                    <li>I  -  Inside</li>
+                    <li>O - Outside</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+        
+    <p>
+        <strong>Stage -4: We further clean the text and preprocess the data for to train machine learning.</strong>
+        <ul>
+            <li>Prepare Training Data for Spacy</li>
+            <li>Convert data into spacy format</li>
+        </ul>
+    </p>
+
+    <p>
+        <strong>Stage -5: With the preprocess data we train the Named Entity model.</strong>
+        <ul>
+            <li>Configuring NER Model</li>
+            <li>Train the model</li>
+        </ul>
+    </p>
+        
+    <p>
+        <strong>Stage -6: Predict the entitles using NER and model and create data pipeline for parsing text.</strong>
+        <ul>
+            <li>Load Model</li>
+            <li>Render and Serve with Displacy</li>
+            <li>Draw Bounding Box on Image</li>
+            <li>Parse Entitles from Text</li>
+        </ul>
+    </p>
+        
+    <h4>Finally, we put all together and create document scanner app.</h4>
+{% endblock  %}

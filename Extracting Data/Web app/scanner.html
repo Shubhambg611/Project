@@ -1,0 +1,61 @@
+
+{% extends 'index.html' %}
+
+
+{% block body %}
+<br><br>
+
+<div class="w-12" style=" text-align: center;">
+    <img class="img-responsive" style= "width: 378px;"  src='/static/images/card_img.png' alt= "bg_image" />
+</div>
+
+<div class="p-3 text-center mb-5 mt-5">
+    <h4>
+        Upload the Business Card to Scan and Extract Entities
+    </h4>
+</div>
+
+<div class="row">
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="input-group">
+            <input type="file" class="form-control" name="image_name" required>
+            <input type="submit" value="Upload Image" class="btn btn-primary">
+        </div>
+
+    </form>
+    <br>
+    {% if fileupload%}
+
+        <div class="row">
+            <button class="btn btn-primary"  style ="width: 306px;
+            margin-top: 30px; margin-bottom: 30px; margin-right:auto ; padding: 12px;
+            margin-left: auto;"  id="sendData">Wrap Document and Extract Text</button>
+        </div> 
+
+    {% endif %}
+
+</div>
+
+<!-- Creating a CANVAS-->
+{% if fileupload %}
+<p>{{message}}</p>
+
+<div class="row">
+
+    <div class="col">
+        <canvas id="canvas" style="max-width: 100%; height:auto"></canvas>
+    </div>
+
+    <div class="col" id="loader" align="center">
+        
+    </div>
+</div>
+
+<script>
+    loadPoints({{ points | tojson }})
+</script>
+
+
+{% endif %}
+
+{% endblock %}
